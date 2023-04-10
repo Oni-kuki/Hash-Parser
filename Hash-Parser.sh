@@ -19,7 +19,7 @@ if [ -e "$1" ]; then
   # Check if file is empty
   if [ -s "$1" ]; then
     # Check if file contains hashes
-    if grep -E -o "([a-fA-F0-9]{32}|[a-fA-F0-9]{40}|[a-fA-F0-9]{64})" "$1" > /dev/null; then
+    if grep -E -o "([a-fA-F0-9]{32}|[a-fA-F0-9]{40}|[a-fA-F0-9]{64}|[a-fA-F0-9]{128})" "$1" > /dev/null; then
       echo "Hashes Found"
       grep -E -o "([a-fA-F0-9]{32}|[a-fA-F0-9]{40}|[a-fA-F0-9]{64})" "$1" > Hashes_"$now".txt
       echo "Hashes Written To File Hashes_$now.txt"
